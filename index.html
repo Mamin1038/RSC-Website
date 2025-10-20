@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Life - Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Eco Life</div>
+    <div class="cart-icon" id="cart-button">🛒 <span id="cart-count">0</span></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" data-bg="images/hero.jpg">
+    <div class="overlay">
+      <h1>Eco Life</h1>
+      <p>Eco-friendly products for a sustainable future.</p>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- Products Section -->
+  <main>
+    <section id="products" class="product-section">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <!-- 12 products -->
+        <div class="product-card" data-id="1" data-name="Reusable tumbler" data-price="15.99">
+          <img src="images/eco1.png" alt="Reusable tumbler">
+          <h3>Reusable tumbler</h3>
+          <p>Keeps drinks hot or cold; reduces single-use cups.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="2" data-name="Stainless steel straw" data-price="5.99">
+          <img src="images/eco2.png" alt="Stainless steel straw">
+          <h3>Stainless steel straw</h3>
+          <p>Durable and washable alternative to plastic straws.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="3" data-name="Silicone zippered pouch" data-price="9.99">
+          <img src="images/eco3.png" alt="Silicone zippered pouch">
+          <h3>Silicone zippered pouch</h3>
+          <p>Reusable food storage; safe for freezer and microwave.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="4" data-name="Solid kitchen detergent" data-price="6.99">
+          <img src="images/eco4.png" alt="Solid kitchen detergent">
+          <h3>Solid kitchen detergent</h3>
+          <p>Plastic-free dish soap in bar form.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="5" data-name="Natural loofah sponge" data-price="3.99">
+          <img src="images/eco5.png" alt="Natural loofah sponge">
+          <h3>Natural loofah sponge</h3>
+          <p>Plant-based scrubber that's biodegradable.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="6" data-name="Bamboo toothbrush" data-price="4.99">
+          <img src="images/eco6.png" alt="Bamboo toothbrush">
+          <h3>Bamboo toothbrush</h3>
+          <p>Compostable handle; eco-friendly brushing.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="7" data-name="Shampoo bar" data-price="7.99">
+          <img src="images/eco7.png" alt="Shampoo bar">
+          <h3>Shampoo bar</h3>
+          <p>Solid shampoo with no plastic packaging.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="8" data-name="Reusable shopping bag" data-price="8.99">
+          <img src="images/eco8.png" alt="Reusable shopping bag">
+          <h3>Reusable shopping bag</h3>
+          <p>Foldable tote that replaces plastic bags.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="9" data-name="Recycled paper notebook" data-price="5.49">
+          <img src="images/eco9.png" alt="Recycled paper notebook">
+          <h3>Recycled paper notebook</h3>
+          <p>Made from reused paper; saves trees and energy.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="10" data-name="Recycled material clothing" data-price="25.99">
+          <img src="images/eco10.png" alt="Recycled material clothing">
+          <h3>Recycled material clothing</h3>
+          <p>Apparel made from repurposed fibers or bottles.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="11" data-name="Solid toothpaste tablet" data-price="6.49">
+          <img src="images/eco11.png" alt="Solid toothpaste tablet">
+          <h3>Solid toothpaste tablet</h3>
+          <p>Chewable toothpaste; no tube waste.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="12" data-name="Bamboo toilet paper" data-price="12.99">
+          <img src="images/eco12.png" alt="Bamboo toilet paper">
+          <h3>Bamboo toilet paper</h3>
+          <p>Soft, fast-growing alternative to wood pulp.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <span id="cart-total">Total: $0.00</span>
+        <button id="checkout-button">Checkout</button>
+        <button id="close-cart">Close</button>
+      </div>
+
+      <!-- Checkout Form -->
+      <div id="checkout-section" style="display:none;">
+        <h3>Checkout</h3>
+        <form id="checkout-form">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+
+          <label for="address">Address</label>
+          <textarea id="address" required></textarea>
+
+          <label for="cardnumber">Card Number</label>
+          <input type="text" id="cardnumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+          <label for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc" placeholder="123" maxlength="4" required>
+
+          <button type="submit" class="btn">Confirm Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
